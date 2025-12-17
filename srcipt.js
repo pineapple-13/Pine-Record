@@ -11,6 +11,8 @@ function getInput(){
     tasksVal= tasksInput.value;
     if(tasksVal.trim() === "") return;
 
+        tasksList.classList.remove("empty")
+
         const li = document.createElement("li");
         li.classList.add("taskLi");
 
@@ -46,6 +48,16 @@ function getInput(){
         trashBtn.classList.add("trashBtn"); 
         trashBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trash"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>`;       
 
+        trashBtn.addEventListener("click", function(){
+            const li = this.closest(".taskLi");
+            li.remove();
+
+            if (tasksList.children.length === 0){
+                tasksList.classList.add("empty");
+                console.log("hi")
+            }
+        })
+
         const trashText = document.createElement("p");
         trashText.textContent = "Trash"
 
@@ -58,12 +70,17 @@ function getInput(){
         li.appendChild(p);
         li.appendChild(btns);
 
-        tasksList.appendChild(li)
-
-        console.log(`Task Added ${tasksVal}`)
+        tasksList.appendChild(li);
 
         tasksInput.value = "";
         tasksVal = "";
+}
+
+tasksInput.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){
+        getInput();
     }
+})
+
 
 

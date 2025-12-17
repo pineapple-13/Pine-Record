@@ -95,71 +95,7 @@ nav{
     transform: translateY(-5px);
 }
 
-@media (max-width: 1200px){
-    nav{
-        font-size: 1.3rem;
-    }
-    .sec1{
-        font-size: 1.2rem;
-    }
-    .choices{
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 900px){
-    nav{
-        font-size: 1rem;
-    }
-    .sec1{
-        font-size: 0.9rem;
-    }
-    .choices{
-        width: 40vw;
-        height: 15vw;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 700px){
-    body{
-        display: block;
-    }
-    nav{
-        width: 100%;
-        height: 6rem;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        font-size: 1.3rem;
-        border: none;
-    }
-    .navDiv:hover{
-        background-color: transparent;
-        color: inherit;
-        box-shadow: none;
-        cursor: default;
-    }
-    .sec1{
-        font-size: 0.8rem;
-    }
-    .choices{
-        width: 60vw;
-        height: 17vw;
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 400px){
-    nav{
-        font-size: 0.9rem;
-    }
-    .choices{
-        font-size: 1.2rem;
-    }
-}
-
-    /* SECTION TWO */
+/* TASK SECTION */
 .tasksSec .sec1{
     text-align: center;
     font-size: 1.5rem;
@@ -190,8 +126,8 @@ nav{
 }
 
 .taskBtn{
-    height: 5vw;
     width: 10vw;
+    height: 5vw;
     border-radius: 0 2rem 2rem 0;
     cursor: pointer;
 }
@@ -207,6 +143,10 @@ nav{
     align-items: center;
     gap: 1rem;
     border-radius: 2rem;
+}
+
+.taskList.empty{
+    display: none;
 }
 
 .taskLi {
@@ -234,7 +174,7 @@ nav{
 
 .liBtns{
     width: 20%;
-    height: 5vw;
+    height: 10vh;
     padding: 0.3rem 0 0.3rem 1rem;
     display: flex;
     flex-direction: column;
@@ -267,4 +207,113 @@ nav{
 .completed{
     text-decoration: line-through;
     opacity: 0.5;
+}
+
+
+@media (max-width: 1200px){
+    nav{
+        font-size: 1.3rem;
+    }
+    .sec1{
+        font-size: 1.2rem;
+    }
+    .choices{
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 900px){
+    nav{
+        font-size: 1rem;
+    }
+    .sec1{
+        font-size: 0.9rem;
+    }
+    .choices{
+        width: 40vw;
+        height: 15vw;
+        font-size: 1.2rem;
+    } 
+    .taskLi{
+        gap:0.5rem
+    }
+    .liBtns{
+        font-size: 0.9rem;
+        padding-left: 0.5rem;
+    }
+    .doneDiv, .trashDiv{
+        gap: 0.4rem
+    }
+    .check, .trash{
+        width: 20px;
+        height: 15px;
+    }
+}
+
+@media (max-width: 700px){
+    body{
+        display: block;
+    }
+    nav{
+        width: 100%;
+        height: 6rem;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 1.3rem;
+        border: none;
+    }
+    .navDiv:hover{
+        background-color: transparent;
+        color: inherit;
+        box-shadow: none;
+        cursor: default;
+    }
+    .sec1{
+        font-size: 0.8rem;
+    }
+    .choices{
+        width: 60vw;
+        height: 17vw;
+        font-size: 1.5rem;
+    }
+    .taskInput{
+        width: 70vw;
+        height: 10vw;
+        font: 0.1rem;
+    }
+    .liBtns{
+        height: 12vw;
+    }
+    .taskBtn{
+        width: 20vw;
+        height: 10vw;
+    }
+    .check, .trash{
+        width: 15px;
+        height: 12px;
+    }
+}
+
+@media (max-width: 550px){
+    .taskLi{
+        padding-right: 0.3rem;
+    }
+    .liBtns{
+        width: 21%;
+        flex-direction: initial;
+        padding: 0.5rem 0.7rem;
+    }
+    .doneDiv p, .trashDiv p{
+        display: none;
+    }
+}
+
+@media (max-width: 400px){
+    nav{
+        font-size: 0.9rem;
+    }
+    .choices{
+        font-size: 1.2rem;
+    }
 }

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Turret+Road:wght@200;300;400;500;700;800&family=Yarndings+12&display=swap" rel="stylesheet">
+    <title>To Do</title>
+</head>
+<body>
+        <!-- NAVIGATION -->
+    <header>
+        <nav>
+            <div class="navDiv"><img src=""></div>
+
+            <div class="navDiv"><h3>Pine Record</h3></div>
+            <div class="navDiv"><h3>Pine Tasks</h3></div>
+            <div class="navDiv"><h3>Pine Table</h3></div>
+            <div class="navDiv"><h3>Pine Dairy</h3></div>
+            <div class="navDiv"><h3>Pine Notes</h3></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="recordSec">
+                <!-- FRONT FACE -->
+            <div class="sec1">
+                <h1>Pine Record</h1>
+
+                <p>A quiet place to slow down, write your thoughts, and gently organize your day all in one peaceful space.</p>
+            </div>
+
+                <!-- PINE CHOICES -->
+            <div class="sec2">
+                <div class="choices"><h2>Pine Tasks</h2></div>
+                <div class="choices"><h2>Pine Table</h2></div>
+                <div class="choices"><h2>Pine Dairy</h2></div>
+                <div class="choices"><h2>Pine Notes</h2></div>
+            </div>
+        </section>
+
+        <section class="tasksSec">
+            <div class="sec1">
+                <h1>Pine Tasks</h1>
+
+                <p>Organize what needs to be done and move through your day with quiet focus.</p>
+            </div>
+
+            <div class="secc2">
+                <div class="inputSec">
+                    <input type="text" id="taskInput" class="taskInput">
+
+                    <button onclick="getInput()" id="taskBtn" class="taskBtn">ENTER</button>
+                </div>
+
+                <ul id="taskList" class="taskList">
+
+                    <li class="taskLi">
+                        <p class="liP">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia nulla ad enim rem quos neque voluptas illo beatae autem nemo accusantium blanditiis tempore, facilis dolorum veritatis dicta? Fugiat, earum illo?Lorem ipsum dolor sit amet, consectetur adipisicing elit. In nihil dicta ullam voluptatibus commodi quod aliquam non ipsam laborum, enim, ad cum voluptate doloremque necessitatibus quos itaque tempora fugiat. Consequatur.</p>
+                        
+                        <div class="liBtns">
+                            <div class="doneDiv">
+                                <button onclick="done()" class="doneBtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-icon lucide-check check"><path d="M20 6 9 17l-5-5"/></svg>
+                                </button>
+
+                                <p>Done</p>
+                            </div>
+                            <div class="trashDiv">
+                                <button onclick="trash()" class="trashBtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-icon lucide-trash trash"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                                </button>
+
+                                <p>Trash</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="taskLi">
+                        <p class="liP">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia nulla ad enim rem quos neque voluptas illo beatae autem nemo accusantium blanditiis tempore, facilis dolorum veritatis dicta? Fugiat, earum illo?Lorem ipsum dolor sit amet, consectetur adipisicing elit. In nihil dicta ullam voluptatibus commodi quod aliquam non ipsam laborum, enim, ad cum voluptate doloremque necessitatibus quos itaque tempora fugiat. Consequatur.</p>
+                        
+                        <div class="liBtns">
+                            <div class="doneDiv">
+                                <button class="doneBtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-icon lucide-check check"><path d="M20 6 9 17l-5-5"/></svg>
+                                </button>
+
+                                <p>Done</p>
+                            </div>
+                            <div class="trashDiv">
+                                <button class="trashBtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-icon lucide-trash trash"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                                </button>
+
+                                <p>Trash</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="taskLi">
+                        <p class="liP">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia nulla ad enim rem quos neque voluptas illo beatae autem nemo accusantium blanditiis tempore, facilis dolorum veritatis dicta? Fugiat, earum illo?Lorem ipsum dolor sit amet, consectetur adipisicing elit. In nihil dicta ullam voluptatibus commodi quod aliquam non ipsam laborum, enim, ad cum voluptate doloremque necessitatibus quos itaque tempora fugiat. Consequatur.</p>
+                        
+                        <div class="liBtns">
+                            <div class="doneDiv">
+                                <button onclick="done()" class="doneBtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-icon lucide-check check"><path d="M20 6 9 17l-5-5"/></svg>
+                                </button>
+
+                                <p>Done</p>
+                            </div>
+                            <div class="trashDiv">
+                                <button onclick="trash()" class="trashBtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-icon lucide-trash trash"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                                </button>
+
+                                <p>Trash</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="srcipt.js"></script>
+</body>
+</html>

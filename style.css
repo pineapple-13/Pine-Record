@@ -1,0 +1,270 @@
+    /* GLOBAL */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Kode Mono";
+}
+
+    /* BODY */
+body{
+    background-color: #1B2A23;
+    color: #D3CEC0;
+    text-shadow: 0 0 0.15rem #fff;
+    display: grid;
+    grid-template-columns: 20vw 1fr;
+    min-height: 100vh;
+}
+
+    /* NAV */
+nav{
+    width: auto;
+    height: 100vh;
+    background-color: #358257;
+    color: #EAE6DA;
+    text-shadow: 0 0 0.12rem #fff;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    border-top: 2rem solid #225d3b ;
+    border-bottom: 2rem solid #225d3b ;
+}
+
+.navDiv{
+    height: calc(100% / 6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navDiv:hover{
+    background-color: #2f210e;
+    color: #7AB87D;
+    box-shadow: 0 0 0.3rem #2f210e;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+    /* SECTION ONE */
+
+.recordSec{
+    display: none;
+}
+
+.recordSec .sec1{
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 5vw 5vw 5vw 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.recordSec .sec2{
+    background-color: #3B2B22;
+    padding: 3vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem 10rem;
+    border-top: 1rem solid #2e2018;
+    border-bottom: 1rem solid #2e2018;
+    box-shadow: 0 0 0.5rem #1c120c;
+}
+
+.choices{
+    background-color: #5B3E2F;
+    width: 20vw;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3vw;
+    box-shadow: 0 0 0.5rem #1c120c;
+    font-size: 1.5rem;
+    transition: 0.5s;
+}
+
+.choices:hover{
+    background-color: #7C5A44;
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+@media (max-width: 1200px){
+    nav{
+        font-size: 1.3rem;
+    }
+    .sec1{
+        font-size: 1.2rem;
+    }
+    .choices{
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 900px){
+    nav{
+        font-size: 1rem;
+    }
+    .sec1{
+        font-size: 0.9rem;
+    }
+    .choices{
+        width: 40vw;
+        height: 15vw;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 700px){
+    body{
+        display: block;
+    }
+    nav{
+        width: 100%;
+        height: 6rem;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 1.3rem;
+        border: none;
+    }
+    .navDiv:hover{
+        background-color: transparent;
+        color: inherit;
+        box-shadow: none;
+        cursor: default;
+    }
+    .sec1{
+        font-size: 0.8rem;
+    }
+    .choices{
+        width: 60vw;
+        height: 17vw;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 400px){
+    nav{
+        font-size: 0.9rem;
+    }
+    .choices{
+        font-size: 1.2rem;
+    }
+}
+
+    /* SECTION TWO */
+.tasksSec .sec1{
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 5vw 5vw 5vw 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.tasksSec .sec2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputSec{
+    display: flex;
+    justify-content: center;
+}
+
+.taskInput{
+    height: 5vw;
+    width: 40vw;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    border-radius: 2rem 0 0 2rem;
+}
+
+.taskBtn{
+    height: 5vw;
+    width: 10vw;
+    border-radius: 0 2rem 2rem 0;
+    cursor: pointer;
+}
+
+    /* TASK LIST SECTION */
+.taskList{
+    width: auto;
+    background-color: #2f210e;
+    margin: 3rem auto 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 2rem;
+}
+
+.taskLi {
+    width: 100%;
+    min-height: 6vw;
+    background-color: #5B3E2F;
+    color: #EAE6DA;
+    padding: 0.5rem;
+    padding-left: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+    gap: 1rem;
+}
+
+.liP{
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.4;
+}
+
+.liBtns{
+    width: 20%;
+    height: 5vw;
+    padding: 0.3rem 0 0.3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #3B2B22;
+    border-radius: 1rem;
+}
+
+.doneDiv, .trashDiv{
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    border: 50%;
+}
+
+.check, .trash{
+    width: 25px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checked{
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}

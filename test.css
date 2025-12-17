@@ -1,0 +1,109 @@
+/* GLOBAL */
+body {
+    display: grid;
+    grid-template-columns: 20vw 1fr;
+    min-height: 100vh;
+    background-color: #1B2A23; /* deep green-brown forest floor */
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* NAVIGATION */
+nav {
+    background-color: #358257; /* rich forest green */
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 3rem;
+    text-align: center;
+}
+
+nav .navDiv p {
+    color: #EAE6DA;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+nav .navDiv p:hover {
+    color: #7AB87D; /* soft forest leaf-green */
+}
+
+/* SECTION 1 */
+.sec-1 {
+    text-align: center;
+    padding: 5vh 2rem 3rem 2rem;
+}
+
+.sec-1 h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: #EAE6DA;
+}
+
+.sec-1 p {
+    font-size: 1.1rem;
+    color: #D3CEC0;
+    line-height: 1.6;
+}
+
+/* SECTION 2 - CHOICES */
+.sec-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #3B2B22; /* dark wood section */
+}
+
+.choices {
+    width: 20vw;
+    aspect-ratio: 2 / 1;
+    background-color: #5B3E2F; /* wood boxes */
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EAE6DA;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.choices:hover {
+    transform: translateY(-5px);
+    background-color: #7C5A44; /* subtle highlight */
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    body {
+        grid-template-columns: 25vw 1fr;
+    }
+    .choices {
+        width: 40vw;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        display: block;
+    }
+    nav {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1rem 0;
+    }
+    main {
+        padding: 2rem 1rem;
+    }
+    .choices {
+        width: 80%;
+        margin: 1rem auto;
+    }
+}

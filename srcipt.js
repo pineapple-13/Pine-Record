@@ -1,4 +1,4 @@
-// SECTION TWO
+// PINE TASK
 let tasksVal = "";
 
 
@@ -82,5 +82,36 @@ tasksInput.addEventListener("keydown", function(e){
     }
 })
 
+const table = document.querySelector(".table");
 
+table.addEventListener("input", function(){
+    const tbody = document.querySelector("tbody");
+    const lastTr = tbody.lastElementChild;
+    const lastTd = lastTr.querySelectorAll("td");
+
+    let rowEmpty = true
+
+    for (const td of lastTd){
+        if(td.textContent.trim() !== ""){
+            rowEmpty = false;
+            break;
+        }
+    }
+    
+    if(rowEmpty === false){
+        const newTr = document.createElement("tr");
+        newTr.innerHTML = `<td contenteditable=""></td>
+                           <td contenteditable=""></td>
+                           <td contenteditable=""></td>
+                           <td contenteditable=""></td>
+                           <td contenteditable=""></td>
+                           <td contenteditable=""></td>
+                           <td contenteditable=""></td>
+                           <td contenteditable=""></td>`
+
+        tbody.appendChild(newTr);
+        console.log(newTr);
+    }
+
+});
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="test.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,32 +67,63 @@
 
                 <p>A serene place to map out your week or a single day, helping your plans flow naturally and stay fully under your control.</p>
             </div>
+
+                <!-- PINE CHOICES -->
+            <div class="sec2">
+                <div class="choices"><h2>Pine Tasks</h2></div>
+                <div class="choices"><h2>Pine Table</h2></div>
+                <div class="choices"><h2>Pine Dairy</h2></div>
+                <div class="choices"><h2>Pine Notes</h2></div>
+            </div>
+        </section>
+
+        <section class="tasksSec">
+            <div class="sec1">
+                <h1>Pine Tasks</h1>
+
+                <p>Organize what needs to be done and move through your day with quiet focus.</p>
+            </div>
+
+            <div class="secc2">
+                <div class="inputSec">
+                    <input type="text" id="taskInput" class="taskInput" placeholder="Write a task here...">
+
+                    <button onclick="getInput()" id="taskBtn" class="taskBtn">ENTER</button>
+                </div>
+
+                <ul id="taskList" class="taskList empty">
+                </ul>
+            </div>
+        </section>
+
+        <section class="tableSec">
+            <div class="sec1">
+                <h1>Pine Table</h1>
+
+                <p>A serene place to map out your week or a single day, helping your plans flow naturally and stay fully under your control.</p>
+            </div>
             <div class="sec2">
                 <table class="table">
-                    <thead>
-                        <tr>
-                            <th>TIME</th>
-                            <th>SUN</th>
-                            <th>MON</th>
-                            <th>TUE</th>
-                            <th>WED</th>
-                            <th>THU</th>
-                            <th>FRI</th>
-                            <th>SAT</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td contenteditable=""></td>
-                            <td contenteditable=""></td>
-                            <td contenteditable=""></td>
-                            <td contenteditable=""></td>
-                            <td contenteditable=""></td>
-                            <td contenteditable=""></td>
-                            <td contenteditable=""></td>
-                            <td contenteditable=""></td>
-                        </tr>
-                    </tbody>
+                    <tr>
+                        <th>TIME</th>
+                        <th>SUN</th>
+                        <th>MON</th>
+                        <th>TUE</th>
+                        <th>WED</th>
+                        <th>THU</th>
+                        <th>FRI</th>
+                        <th>SAT</th>
+                    </tr>
+                    <tr>
+                        <td contenteditable=""></td>
+                        <td contenteditable=""></td>
+                        <td contenteditable=""></td>
+                        <td contenteditable=""></td>
+                        <td contenteditable=""></td>
+                        <td contenteditable=""></td>
+                        <td contenteditable=""></td>
+                        <td contenteditable=""></td>
+                    </tr>
                 </table>
             </div>
         </section>

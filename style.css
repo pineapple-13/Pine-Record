@@ -522,3 +522,7 @@ td:focus {
         font-size: 1.2rem;
     }
 }
+
+.tableSec{
+    display: initial;
+}

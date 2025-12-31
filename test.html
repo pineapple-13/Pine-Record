@@ -1,136 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="test.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Turret+Road:wght@200;300;400;500;700;800&family=Yarndings+12&display=swap" rel="stylesheet">
-    <title>To Do</title>
+<meta charset="UTF-8">
+<title>Editable Timetable</title>
+<link rel="stylesheet" href="test.css">
 </head>
 <body>
-        <!-- NAVIGATION -->
-    <header>
-        <nav>
-            <div class="navDiv"><img src=""></div>
 
-            <div class="navDiv"><h3>Pine Record</h3></div>
-            <div class="navDiv"><h3>Pine Tasks</h3></div>
-            <div class="navDiv"><h3>Pine Table</h3></div>
-            <div class="navDiv"><h3>Pine Dairy</h3></div>
-            <div class="navDiv"><h3>Pine Notes</h3></div>
-        </nav>
-    </header>
+<div class="timetable-wrapper">
+    <!-- TABLE -->
+    <table id="timetable">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Initial buffer row -->
+            <tr class="buffer-row">
+                <td contenteditable></td>
+                <td contenteditable></td>
+                <td contenteditable></td>
+                <td contenteditable></td>
+                <td contenteditable></td>
+                <td contenteditable></td>
+                <td contenteditable></td>
+                <td contenteditable></td>
+            </tr>
+        </tbody>
+    </table>
 
-    <main>
-        <section class="recordSec">
-                <!-- FRONT FACE -->
-            <div class="sec1">
-                <h1>Pine Record</h1>
+    <!-- BUTTON COLUMN -->
+    <div id="row-buttons"></div>
+</div>
 
-                <p>A quiet place to slow down, write your thoughts, and gently organize your day all in one peaceful space.</p>
-            </div>
+<!-- HEADER ADD BUTTON -->
+<button id="header-add" class="add-btn">＋</button>
 
-                <!-- PINE CHOICES -->
-            <div class="sec2">
-                <div class="choices"><h2>Pine Tasks</h2></div>
-                <div class="choices"><h2>Pine Table</h2></div>
-                <div class="choices"><h2>Pine Dairy</h2></div>
-                <div class="choices"><h2>Pine Notes</h2></div>
-            </div>
-        </section>
-
-        <section class="tasksSec">
-            <div class="sec1">
-                <h1>Pine Tasks</h1>
-
-                <p>Organize what needs to be done and move through your day with quiet focus.</p>
-            </div>
-
-            <div class="secc2">
-                <div class="inputSec">
-                    <input type="text" id="taskInput" class="taskInput" placeholder="Write a task here...">
-
-                    <button onclick="getInput()" id="taskBtn" class="taskBtn">ENTER</button>
-                </div>
-
-                <ul id="taskList" class="taskList empty">
-                </ul>
-            </div>
-        </section>
-
-        <section class="tableSec">
-            <div class="sec1">
-                <h1>Pine Table</h1>
-
-                <p>A serene place to map out your week or a single day, helping your plans flow naturally and stay fully under your control.</p>
-            </div>
-
-                <!-- PINE CHOICES -->
-            <div class="sec2">
-                <div class="choices"><h2>Pine Tasks</h2></div>
-                <div class="choices"><h2>Pine Table</h2></div>
-                <div class="choices"><h2>Pine Dairy</h2></div>
-                <div class="choices"><h2>Pine Notes</h2></div>
-            </div>
-        </section>
-
-        <section class="tasksSec">
-            <div class="sec1">
-                <h1>Pine Tasks</h1>
-
-                <p>Organize what needs to be done and move through your day with quiet focus.</p>
-            </div>
-
-            <div class="secc2">
-                <div class="inputSec">
-                    <input type="text" id="taskInput" class="taskInput" placeholder="Write a task here...">
-
-                    <button onclick="getInput()" id="taskBtn" class="taskBtn">ENTER</button>
-                </div>
-
-                <ul id="taskList" class="taskList empty">
-                </ul>
-            </div>
-        </section>
-
-        <section class="tableSec">
-            <div class="sec1">
-                <h1>Pine Table</h1>
-
-                <p>A serene place to map out your week or a single day, helping your plans flow naturally and stay fully under your control.</p>
-            </div>
-            <div class="sec2">
-                <table class="table">
-                    <tr>
-                        <th>TIME</th>
-                        <th>SUN</th>
-                        <th>MON</th>
-                        <th>TUE</th>
-                        <th>WED</th>
-                        <th>THU</th>
-                        <th>FRI</th>
-                        <th>SAT</th>
-                    </tr>
-                    <tr>
-                        <td contenteditable=""></td>
-                        <td contenteditable=""></td>
-                        <td contenteditable=""></td>
-                        <td contenteditable=""></td>
-                        <td contenteditable=""></td>
-                        <td contenteditable=""></td>
-                        <td contenteditable=""></td>
-                        <td contenteditable=""></td>
-                    </tr>
-                </table>
-            </div>
-        </section>
-    </main>
-
-    <footer></footer>
-
-    <script src="srcipt.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

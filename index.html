@@ -8,18 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Turret+Road:wght@200;300;400;500;700;800&family=Yarndings+12&display=swap" rel="stylesheet">
-    <title>To Do</title>
+    <title>Pine Record</title>
 </head>
 <body>
         <!-- NAVIGATION -->
     <header>
         <nav>
-            <div class="navDiv"><img src=""></div>
-
             <div class="navDiv"><h3>Pine Record</h3></div>
             <div class="navDiv"><h3>Pine Tasks</h3></div>
             <div class="navDiv"><h3>Pine Table</h3></div>
             <div class="navDiv"><h3>Pine Dairy</h3></div>
+            <div class="navDiv"><h3>Pine Dream</h3></div>
             <div class="navDiv"><h3>Pine Notes</h3></div>
         </nav>
     </header>
@@ -38,6 +37,7 @@
                 <div class="choices"><h2>Pine Tasks</h2></div>
                 <div class="choices"><h2>Pine Table</h2></div>
                 <div class="choices"><h2>Pine Dairy</h2></div>
+                <div class="choices"><h2>Pine Dream</h2></div>
                 <div class="choices"><h2>Pine Notes</h2></div>
             </div>
         </section>
@@ -67,33 +67,63 @@
 
                 <p>A serene place to map out your week or a single day, helping your plans flow naturally and stay fully under your control.</p>
             </div>
-            <div class="sec2">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>TIME</th>
-                            <th>SUN</th>
-                            <th>MON</th>
-                            <th>TUE</th>
-                            <th>WED</th>
-                            <th>THU</th>
-                            <th>FRI</th>
-                            <th>SAT</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td contenteditable=""></td>
-                            <td contenteditable=""></td>
-                            <td contenteditable=""></td>
-                            <td contenteditable=""></td>
-                            <td contenteditable=""></td>
-                            <td contenteditable=""></td>
-                            <td contenteditable=""></td>
-                            <td contenteditable=""></td>
-                        </tr>
-                    </tbody>
-                </table>
+            
+            <div class="outerDiv">
+                <div class="toggleDiv">
+                    <div class="toggleBtn ">
+                        <button class="week">Week</button>
+                        <button class="days">Days</button>
+                    </div>
+                    <div class="selectDiv">
+                        <select class="tableSize">
+                            <option>Normal</option>
+                            <option>Large</option>
+                            <option>Big</option>
+                            <option>Huge</option>
+                            <option>Enormus</option>
+                        </select>
+                        <select class="daySel">
+                            <option>Sunday</option>
+                            <option>Monday</option>
+                            <option>Tuesday</option>
+                            <option>Wednesday</option>
+                            <option>Thursday</option>
+                            <option>Friday</option>
+                            <option>Saturday</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="ultDiv">
+                    <div class="tableBtns">
+                        <!-- <div class="headBtn">
+                        </div> -->
+                        
+                        <!-- <div class="rowBtns">
+                            <svg class="del"></svg>
+                            <svg class="add"></svg>
+                        </div> -->
+                    </div>
+
+                    <div class="sec2 pp">
+                        <table class="table">
+                            <thead>
+                                <tr class="trHead">
+                                    <th>TIME</th>
+                                    <th>SUN</th>
+                                    <th>MON</th>
+                                    <th>TUE</th>
+                                    <th>WED</th>
+                                    <th>THU</th>
+                                    <th>FRI</th>
+                                    <th>SAT</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

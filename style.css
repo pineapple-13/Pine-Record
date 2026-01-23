@@ -51,10 +51,6 @@ nav{
 
 /* PINE RECORD */
 
-.recordSec{
-    display: none;
-}
-
 .recordSec .sec1{
     text-align: center;
     font-size: 1.5rem;
@@ -98,10 +94,6 @@ nav{
 }
 
 /* PINE TASK */
-
-.tasksSec{
-    display: none;
-}
 
 .tasksSec .sec1{
     text-align: center;
@@ -218,9 +210,6 @@ nav{
 }
 
 /* PINE TABLE */
-.tableSec{
-    display: none;
-}
 
 .tableSec .sec1{
     text-align: center;
@@ -411,6 +400,274 @@ td:focus {
 .add.big{ width: 2.505vw; }
 .add.huge{ width: 3.34vw; }
 
+
+    /* DIARY SECTION */
+
+.diarySec .sec1{
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 5vw 5vw 5vw 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.diaryWrite, .diaryInfo{
+    width: 100%;
+    background: #2e2018;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.diaryInfo{
+    width: 90%;
+    margin: 2rem auto;
+    border-radius: 3rem;
+}
+
+.upperSec, .upperSecInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titleWrap, .titleWrapInfo{
+    width: 60%;
+    display: flex;
+    align-items: center; 
+}
+
+.diaryTitle{
+    height: 40px;
+    width: 100%;
+    background-color: #5B3E2F;
+    color: #EAE6DA;
+    padding: 0.5rem;
+    border-radius: 1.4rem;
+    outline: none;
+    border: none;
+}
+
+.mooDate, .mooDateInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mooDateInfo{
+    gap: 0.2rem;
+}
+
+.moodSelect {
+    position: relative;
+    display: inline-block;
+}
+
+.currentMood {
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+
+.moodPanel {
+    position: absolute;
+    top: calc(100% + 8px); /* below mood */
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+
+    padding: 14px 16px;
+    background: #1B2A23;
+    border-radius: 12px;
+    z-index: 5;
+}
+
+
+.moodPanel span {
+    cursor: pointer;
+    font-size: 1.4rem;
+    text-align: center;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.moodPanel span:hover {
+    transform: scale(1.2);
+    opacity: 0.85;
+}
+
+.moodInfo{
+    font-size: 1.4rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.date{
+    background-color: #fff;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+}
+
+.diaryText, .diaryTextInfo{
+    width: 60vw;
+    max-width: 90%;
+    background-color: #5B3E2F;
+    color: #EAE6DA;
+    margin: 0 auto;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 1.4rem;
+    resize: none;
+    overflow: hidden;
+    outline: none;
+}
+
+.diaryDone, .diaryEdit, .diaryDel{
+    width: 7vw;
+    height: 4vh;
+    background-color: #5B3E2F;
+    color: #EAE6DA;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0.4rem;
+}
+
+.diaryControls {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem auto 0;
+}
+
+.diaryControlsInner {
+    display: flex;
+    gap: 1rem;
+}
+
+.diaryDone, .diaryEdit, .diaryDel {
+    width: 10vw;
+    height: 3rem;
+    background-color: #5B3E2F;
+    color: #EAE6DA;
+    border: none;
+    border-radius: 1.4rem;
+    cursor: pointer;
+}
+
+.diaryEdit, .diaryDel{
+    margin: 0;
+}
+
+
+/* PINE NOTES */
+
+.notesSec .sec1{
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 5vw 5vw 5vw 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.noteWrite{
+    width: 100%;
+    background-color: #2e2018;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.noteTitle{
+    height: 2rem;
+    width: 50%;
+    background-color: #5B3E2F;
+    color: #EAE6DA;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+}
+
+.noteText{
+    width: 60vw;
+    max-width: 90%;
+    background-color: #5B3E2F;
+    color: #EAE6DA;
+    padding: 1rem;
+    border: none;
+    border-radius: 1.4rem;
+    resize: none;
+    overflow: hidden;
+    outline: none;
+}
+
+.notesList{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.noteItem{
+    width: 100%;
+    background-color: #2e2018;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 2rem;
+}
+
+.noteTextInfo{
+    background-color: #5B3E2F;
+    padding: 1rem;
+    border-radius: 1rem;
+    resize: none;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    max-width: 100%; 
+}
+
+.noteDone{
+    width: 10vw;
+    height: 3rem;
+    background-color: #5B3E2F;
+    color: #EAE6DA;
+    border: none;
+    border-radius: 1.4rem;
+    cursor: pointer;
+}
+
+.noteControls{
+    display: flex;
+    gap: 1rem;
+}
+
+.noteEdit, .noteDel{
+    width: 10vw;
+    height: 3rem;
+    background-color: #5B3E2F;
+    color: #EAE6DA;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;}
+
+
 /* MEDIA */
 @media (max-width: 1200px){
     nav{
@@ -521,8 +778,4 @@ td:focus {
     .choices{
         font-size: 1.2rem;
     }
-}
-
-.tableSec{
-    display: initial;
 }

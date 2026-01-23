@@ -14,12 +14,11 @@
         <!-- NAVIGATION -->
     <header>
         <nav>
-            <div class="navDiv"><h3>Pine Record</h3></div>
-            <div class="navDiv"><h3>Pine Tasks</h3></div>
-            <div class="navDiv"><h3>Pine Table</h3></div>
-            <div class="navDiv"><h3>Pine Dairy</h3></div>
-            <div class="navDiv"><h3>Pine Dream</h3></div>
-            <div class="navDiv"><h3>Pine Notes</h3></div>
+            <div class="navDiv recordNav"><h3>Pine Record</h3></div>
+            <div class="navDiv tasksNav"><h3>Pine Tasks</h3></div>
+            <div class="navDiv tableNav"><h3>Pine Table</h3></div>
+            <div class="navDiv diaryNav"><h3>Pine Dairy</h3></div>
+            <div class="navDiv notesNav"><h3>Pine Notes</h3></div>
         </nav>
     </header>
 
@@ -34,15 +33,14 @@
 
                 <!-- PINE CHOICES -->
             <div class="sec2">
-                <div class="choices"><h2>Pine Tasks</h2></div>
-                <div class="choices"><h2>Pine Table</h2></div>
-                <div class="choices"><h2>Pine Dairy</h2></div>
-                <div class="choices"><h2>Pine Dream</h2></div>
-                <div class="choices"><h2>Pine Notes</h2></div>
+                <div class="choices tasksChoice"><h2>Pine Tasks</h2></div>
+                <div class="choices tableChoice"><h2>Pine Table</h2></div>
+                <div class="choices diaryChoice"><h2>Pine Dairy</h2></div>
+                <div class="choices notesChoice"><h2>Pine Notes</h2></div>
             </div>
         </section>
 
-        <section class="tasksSec">
+        <section class="tasksSec hidden">
             <div class="sec1">
                 <h1>Pine Tasks</h1>
 
@@ -61,7 +59,7 @@
             </div>
         </section>
 
-        <section class="tableSec">
+        <section class="tableSec  hidden">
             <div class="sec1">
                 <h1>Pine Table</h1>
 
@@ -98,7 +96,7 @@
                     <div class="tableBtns">
                         <!-- <div class="headBtn">
                         </div> -->
-                        
+
                         <!-- <div class="rowBtns">
                             <svg class="del"></svg>
                             <svg class="add"></svg>
@@ -126,10 +124,69 @@
                 </div>
             </div>
         </section>
+
+        <section class="diarySec hidden">
+            <div class="sec1">
+                <h1>Pine Diary</h1>
+
+                <p>
+                    A personal space to write freely and reflect on each day, capturing thoughts, moments, and progress as they naturally unfold.
+                </p>
+            </div>
+
+            <div class="diaryWrite">
+                <div class="upperSec">
+                    <div class="titleWrap">
+                        <h1>Title:</h1>
+                        <input class="diaryTitle" type="text">
+                    </div>
+                    <div class="mooDate">
+                        <span>Mood:</span>
+                        <div class="moodSelect">
+                            <span class="mood currentMood">😁</span>
+
+                            <div class="moodPanel hidden">
+                                <span>😁</span><span>😊</span><span>🙂</span><span>😌</span><span>😄</span>
+                                <span>😐</span><span>😕</span><span>😔</span><span>😢</span><span>😠</span>
+                            </div>
+                        </div>
+
+                        <input class="date" type="date">
+
+                    </div>
+                </div>
+
+                <textarea class="diaryText"></textarea>
+
+                <button class="diaryDone">done</button>
+            </div>
+        </section>
+
+        <section class="notesSec hidden">
+            <div class="sec1">
+                <h1>Pine Notes</h1>
+
+                <p>
+                    A space for quick thoughts, reminders, and passing ideas. Write freely, save instantly, and come back whenever you need.
+                </p>
+            </div>
+            
+            <div class="noteWrite">
+                <input class="noteTitle" placeholder="Title (optional)">
+
+                <textarea class="noteText" placeholder="Write a note..."></textarea>
+
+                <button class="noteDone">Done</button>
+            </div>
+
+            <div class="notesList">
+                <!-- notes will be appended here -->
+            </div>
+        </section>
     </main>
 
     <footer></footer>
 
-    <script src="srcipt.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,3 +1,51 @@
+// NAVIGATION 
+
+const recordNav = document.querySelector(".recordNav");
+const tasksNav = document.querySelector(".tasksNav");
+const tableNav = document.querySelector(".tableNav");
+const diaryNav = document.querySelector(".diaryNav");
+const notesNav = document.querySelector(".notesNav");
+
+const recordSec = document.querySelector(".recordSec");
+const tasksSec = document.querySelector(".tasksSec");
+const tableSec = document.querySelector(".tableSec");
+const diarySec = document.querySelector(".diarySec");
+const notesSec = document.querySelector(".notesSec");
+
+const tasksChoice = document.querySelector(".tasksChoice");
+const tableChoice = document.querySelector(".tableChoice");
+const diaryChoice = document.querySelector(".diaryChoice");
+const notesChoice = document.querySelector(".notesChoice");
+
+let currentSec = recordSec;
+
+function showSection(section) {
+    if (currentSec === section) return;
+
+    currentSec.classList.add("hidden");
+    section.classList.remove("hidden");
+    currentSec = section;
+}
+
+
+recordNav.addEventListener("click", () => showSection(recordSec));
+tasksNav.addEventListener("click", () => showSection(tasksSec));
+tableNav.addEventListener("click", () => showSection(tableSec));
+diaryNav.addEventListener("click", () => showSection(diarySec));
+notesNav.addEventListener("click", () => showSection(notesSec));
+
+
+
+// PINE RECORD
+
+
+
+tasksChoice.addEventListener("click", () => showSection(tasksSec));
+tableChoice.addEventListener("click", () => showSection(tableSec));
+diaryChoice.addEventListener("click", () => showSection(diarySec));
+notesChoice.addEventListener("click", () => showSection(notesSec));
+
+
 // PINE TASK
 let tasksVal = "";
 
@@ -634,3 +682,220 @@ tableSize.addEventListener("change", () =>{
 })
 
 
+// PINE DIARY
+
+const moodSelect = document.querySelector(".moodSelect");
+const currentMood = document.querySelector(".currentMood");
+const moodPanel = document.querySelector(".moodPanel");
+
+currentMood.addEventListener("click", () => {
+    moodPanel.classList.toggle("hidden");
+});
+
+moodPanel.addEventListener("click", (e) => {
+    if (e.target.tagName === "SPAN") {
+        currentMood.textContent = e.target.textContent;
+        moodPanel.classList.add("hidden");
+    }
+});
+
+// optional: close when clicking outside
+document.addEventListener("click", (e) => {
+    if (!moodSelect.contains(e.target)) {
+        moodPanel.classList.add("hidden");
+    }
+});
+
+const diaryText = document.querySelector(".diaryText");
+
+if (diaryText) {
+    diaryText.addEventListener("input", () => {
+        diaryText.style.height = "auto";
+        diaryText.style.height = diaryText.scrollHeight + "px";
+    });
+}
+
+
+
+// get the single done button
+const diaryDoneBtn = document.querySelector(".diaryDone");
+
+diaryDoneBtn.addEventListener("click", () => {
+    const diaryWrite = document.querySelector(".diaryWrite");
+
+    const diaryTitle = diaryWrite.querySelector(".diaryTitle").value.trim();
+    const diaryText = diaryWrite.querySelector(".diaryText").value.trim();
+    const mood = diaryWrite.querySelector(".currentMood").textContent;
+    const date = diaryWrite.querySelector(".date").value;
+
+    if (!date || (!diaryTitle && !diaryText) ) return; // prevent empty entries
+
+    // Create a new div for the entry
+    const diaryInfo = document.createElement("div");
+    diaryInfo.classList.add("diaryInfo");
+
+    const upperSecInfo = document.createElement("div");
+    upperSecInfo.classList.add("upperSecInfo");
+
+    const titleWrapInfo = document.createElement("div");
+    titleWrapInfo.classList.add("titleWrapInfo");
+    const titleH1 = document.createElement("h1");
+    titleH1.textContent = diaryTitle;
+    titleWrapInfo.appendChild(titleH1);
+
+    const mooDateInfo = document.createElement("div");
+    mooDateInfo.classList.add("mooDateInfo");
+
+    const moodInfo = document.createElement("p");
+    moodInfo.classList.add("moodInfo");
+    moodInfo.textContent = mood;
+
+    const dateInfo = document.createElement("p");
+    dateInfo.classList.add("dateInfo");
+    dateInfo.textContent = date;
+
+    mooDateInfo.appendChild(moodInfo);
+    mooDateInfo.appendChild(dateInfo);
+
+    upperSecInfo.appendChild(titleWrapInfo);
+    upperSecInfo.appendChild(mooDateInfo);
+
+    const diaryTextInfo = document.createElement("p");
+    diaryTextInfo.classList.add("diaryTextInfo");
+    diaryTextInfo.textContent = diaryText;
+
+    const diaryControls = document.createElement("div");
+    diaryControls.classList.add("diaryControls");
+
+    const diaryEdit = document.createElement("button");
+    diaryEdit.classList.add("diaryEdit");
+    diaryEdit.textContent = "Edit"
+
+    const diaryDel = document.createElement("button");
+    diaryDel.classList.add("diaryDel");
+    diaryDel.textContent = "Del"
+
+    diaryControls.appendChild(diaryEdit);
+    diaryControls.appendChild(diaryDel);
+
+    let isEditing = false;
+
+    diaryEdit.addEventListener("click", () => {
+        if (!isEditing) {
+            diaryTextInfo.contentEditable = "true";
+            diaryTextInfo.focus();
+            diaryEdit.textContent = "Save";
+            isEditing = true;
+        } else {
+            diaryTextInfo.contentEditable = "false";
+            diaryEdit.textContent = "Edit";
+            isEditing = false;
+        }
+    });
+
+    diaryDel.addEventListener("click", () => {
+        diaryInfo.remove();
+    });
+
+    diaryInfo.appendChild(upperSecInfo);
+    diaryInfo.appendChild(diaryTextInfo);
+    diaryInfo.appendChild(diaryControls);
+
+    // Append to the main diary display area
+    document.querySelector(".diarySec").appendChild(diaryInfo);
+
+    // Reset input
+    diaryWrite.querySelector(".titleWrap input").value = "";
+    diaryWrite.querySelector(".diaryText").value = "";
+    diaryWrite.querySelector(".diaryText").style.height = "auto";
+    diaryWrite.querySelector(".currentMood").textContent = "😁";
+    diaryWrite.querySelector(".date").value = "auto";
+});
+
+
+// ---- PINE NOTES ----
+
+// Grab elements
+const noteTextarea = document.querySelector(".noteText");
+const noteDoneBtn  = document.querySelector(".noteDone");
+
+// Auto-resize textarea as user types
+noteTextarea.addEventListener("input", () => {
+    noteTextarea.style.height = "auto"; // reset height
+    noteTextarea.style.height = noteTextarea.scrollHeight + "px"; // grow to content
+});
+
+// Done button: add note
+noteDoneBtn.addEventListener("click", () => {
+    const noteWrite = document.querySelector(".noteWrite");
+
+    const noteTitle = noteWrite.querySelector(".noteTitle").value.trim();
+    const noteTextValue = noteTextarea.value.trim();
+
+    // Prevent empty note
+    if (!noteTextValue) return;
+
+    // ---- Create Note Item ----
+    const noteItem = document.createElement("div");
+    noteItem.classList.add("noteItem");
+
+    // Optional title
+    if (noteTitle) {
+        const titleInfo = document.createElement("h3");
+        titleInfo.classList.add("noteTitleInfo");
+        titleInfo.textContent = noteTitle;
+        noteItem.appendChild(titleInfo);
+    }
+
+    // Note text
+    const textInfo = document.createElement("p");
+    textInfo.classList.add("noteTextInfo");
+    textInfo.textContent = noteTextValue;
+
+    // ---- Controls ----
+    const controls = document.createElement("div");
+    controls.classList.add("noteControls");
+
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    editBtn.classList.add("noteEdit")
+
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "Del";
+    delBtn.classList.add("noteDel")
+
+
+    controls.appendChild(editBtn);
+    controls.appendChild(delBtn);
+
+    noteItem.appendChild(textInfo);
+    noteItem.appendChild(controls);
+
+    document.querySelector(".notesList").appendChild(noteItem);
+
+    // ---- Edit / Save Toggle ----
+    let isEditing = false;
+
+    editBtn.addEventListener("click", () => {
+        if (!isEditing) {
+            textInfo.contentEditable = "true";
+            textInfo.focus();
+            editBtn.textContent = "Save";
+            isEditing = true;
+        } else {
+            textInfo.contentEditable = "false";
+            editBtn.textContent = "Edit";
+            isEditing = false;
+        }
+    });
+
+    // ---- Delete ----
+    delBtn.addEventListener("click", () => {
+        noteItem.remove();
+    });
+
+    // ---- Reset Inputs ----
+    noteWrite.querySelector(".noteTitle").value = "";
+    noteTextarea.value = "";
+    noteTextarea.style.height = "auto";
+});

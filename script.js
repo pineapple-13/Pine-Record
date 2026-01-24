@@ -645,8 +645,14 @@ function resetTableSize() {
     tableSize.selectedIndex = 0;
 }
 
+const TABLE_BREAKPOINT = 900;
+
+let tableInitialized = false;
+let userSwitchedMode = false;
 
 weekBtn.addEventListener("click", () => {
+    userSwitchedMode = true;
+
     showWeek();
     
     if (savedWeekSizeIndex > 0) {
@@ -657,6 +663,8 @@ weekBtn.addEventListener("click", () => {
 });
 
 daysBtn.addEventListener("click", () => {
+    userSwitchedMode = true;
+
     const selectedIndex = daySelect.selectedIndex + 1;
 
     resetTableSize();
@@ -665,7 +673,35 @@ daysBtn.addEventListener("click", () => {
     showDay(selectedIndex);
 });
 
-showWeek();
+function initTableMode() {
+    if (tableInitialized) return;
+
+    if (window.innerWidth <= TABLE_BREAKPOINT) {
+        // Small screen → Day default
+        const selectedIndex = daySelect.selectedIndex + 1;
+        resetTableSize();
+        showDay(selectedIndex);
+    } else {
+        // Large screen → Week default
+        showWeek();
+
+        if (savedWeekSizeIndex > 0) {
+            tableSize.selectedIndex = savedWeekSizeIndex;
+            changeSize(savedWeekSizeIndex);
+        }
+    }
+
+    tableInitialized = true;
+}
+
+initTableMode();
+
+window.addEventListener("resize", () => {
+    if (userSwitchedMode) return;
+
+    tableInitialized = false;
+    initTableMode();
+});
 
 daySelect.addEventListener("change", () => {
     if (currentMode !== "day") return;

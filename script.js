@@ -131,10 +131,10 @@ tasksInput.addEventListener("keydown", function(e){
 })
 
 // Pine Table
+const ultDiv = document.querySelector(".ultDiv");
+const tableBtns = document.querySelector(".tableBtns");
 const table = document.querySelector(".table");
 const tbody = table.querySelector("tbody");
-const tableBtns = document.querySelector(".tableBtns");
-const ultDiv = document.querySelector(".ultDiv");
 
 let currentSizeClass = ""; // "", "large", "big", "huge", "enormous"
 let savedWeekSizeClass = ""
@@ -536,7 +536,7 @@ function showDay(dayIndex) {
     weekBtn.classList.remove("active");
 }
 
-
+let savedWeekSizeIndex = ""
 
 function changeSize(tableIndex){
 
@@ -544,9 +544,9 @@ function changeSize(tableIndex){
 
     savedWeekSizeIndex = tableIndex;
 
+    const trHead = document.querySelector(".trHead");
     const rows = [...tbody.children];
     const rowBtns = [...document.querySelectorAll(".rowBtns")];
-    const trHead = document.querySelector(".trHead");
     const del = [...document.querySelectorAll(".del")];
     const add = [...document.querySelectorAll(".add")];
 
@@ -557,7 +557,6 @@ function changeSize(tableIndex){
 
     table.classList.remove(...classes);
     tableBtns.classList.remove(...classes);
-    // ultDiv.classList.remove(...classes);
     trHead.classList.remove(...classes);
     rows.forEach(tr => tr.classList.remove(...classes));
     headerBtns.classList.remove(...classes);
@@ -571,30 +570,23 @@ function changeSize(tableIndex){
         currentSizeClass = "large";
         savedWeekSizeClass = "large"
 
+        table.classList.add("large");
+        tableBtns.classList.add("large");
+        trHead.classList.add("large");
         rows.forEach(tr => tr.classList.add("large"));
+        headerBtns.classList.add("large");
         rowBtns.forEach(tr => tr.classList.add("large"));
         del.forEach(tr => tr.classList.add("large"));
         add.forEach(tr => tr.classList.add("large"));
-
-        // ultDiv.classList.add("large");
-
-        table.classList.add("large");
-
-        tableBtns.classList.add("large");
-
-        trHead.classList.add("large");
-        headerBtns.classList.add("large");
-
-        console.log("booo")
     }
     else if(tableIndex === 2){
         currentSizeClass = "big";
         savedWeekSizeClass = "big"
 
         table.classList.add("big");
+        tableBtns.classList.add("big");
         trHead.classList.add("big");
         rows.forEach(tr => tr.classList.add("big"));
-        tableBtns.classList.add("big");
         headerBtns.classList.add("big");
         rowBtns.forEach(tr => tr.classList.add("big"));
         del.forEach(tr => tr.classList.add("big"));
@@ -605,9 +597,9 @@ function changeSize(tableIndex){
         savedWeekSizeClass = "huge"
 
         table.classList.add("huge");
+        tableBtns.classList.add("huge");
         trHead.classList.add("huge");
         rows.forEach(tr => tr.classList.add("huge"));
-        tableBtns.classList.add("huge");
         headerBtns.classList.add("huge");
         rowBtns.forEach(tr => tr.classList.add("huge"));
         del.forEach(tr => tr.classList.add("huge"));
@@ -618,9 +610,9 @@ function changeSize(tableIndex){
         savedWeekSizeClass = "enormous"
 
         table.classList.add("enormous");
+        tableBtns.classList.add("enormous");
         trHead.classList.add("enormous");
         rows.forEach(tr => tr.classList.add("enormous"));
-        tableBtns.classList.add("enormous");
         headerBtns.classList.add("enormous");
         rowBtns.forEach(tr => tr.classList.add("enormous"));
         del.forEach(tr => tr.classList.add("enormous"));
@@ -635,10 +627,9 @@ function resetTableSize() {
 
     table.classList.remove(...classes);
     tableBtns.classList.remove(...classes);
-    headerBtns.classList.remove(...classes);
     document.querySelector(".trHead")?.classList.remove(...classes);
-
     tbody.querySelectorAll("tr").forEach(tr => tr.classList.remove(...classes));
+    headerBtns.classList.remove(...classes);
     document.querySelectorAll(".rowBtns").forEach(btn => btn.classList.remove(...classes));
     document.querySelectorAll(".del, .add").forEach(icon => icon.classList.remove(...classes));
 
@@ -864,7 +855,6 @@ noteTextarea.addEventListener("input", () => {
 // Done button: add note
 noteDoneBtn.addEventListener("click", () => {
     const noteWrite = document.querySelector(".noteWrite");
-
     const noteTitle = noteWrite.querySelector(".noteTitle").value.trim();
     const noteTextValue = noteTextarea.value.trim();
 
